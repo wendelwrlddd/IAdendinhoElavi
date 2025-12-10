@@ -1,0 +1,6 @@
+node_modules
+.env
+.git
+debug_key.js
+list_models_rest.js
+npm-debug.log
