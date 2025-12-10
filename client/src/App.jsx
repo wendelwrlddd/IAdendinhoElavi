@@ -52,16 +52,16 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-zinc-900 text-white font-sans overflow-hidden">
-      {/* Header */}
-      <header className="p-4 border-b border-zinc-800 bg-zinc-900/95 backdrop-blur z-10 text-center shadow-md">
+    <div className="flex flex-col h-[100dvh] bg-zinc-900 text-white font-sans overflow-hidden supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh]">
+      {/* Header - Always visible at top */}
+      <header className="flex-none p-4 border-b border-zinc-800 bg-zinc-900/95 backdrop-blur z-20 text-center shadow-md relative">
         <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
           Advogada de dendinho bixo solto ⚖️
         </h1>
         <p className="text-zinc-500 text-xs mt-1">Defendendo o indefensável com fatos duvidosos</p>
       </header>
 
-      {/* Chat History */}
+      {/* Chat History - Scrollable area */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent">
         {messages.length === 0 && (
           <div className="h-full flex flex-col items-center justify-center text-zinc-600 opacity-50 space-y-2">
@@ -97,8 +97,8 @@ function App() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
-      <div className="p-4 bg-zinc-900 border-t border-zinc-800">
+      {/* Input Area - Always visible at bottom */}
+      <div className="flex-none p-4 bg-zinc-900 border-t border-zinc-800 z-20 pb-safe">
         <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto flex items-end gap-2">
           <input
             type="text"
